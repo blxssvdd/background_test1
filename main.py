@@ -81,7 +81,7 @@ async def resized_image(file_name: str, max_size: tuple = (100, 200)):
         image.thumbnail(max_size)
         image.save(RESIZED_PATH / file_name)
     except:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Неможливо обробити файл, спробуйте інший формат.")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Неможливо обробити файл, спробуйте інший формат.")
 
 
 
